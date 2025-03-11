@@ -4,14 +4,24 @@ pipeline {
         CI = 'true'
     }
     stages {
+        stage('Test') {
+            steps {
+                sh 'echo "testing project"'
+            }
+        }
         stage('Build') {
             steps {
                 sh 'echo "building project"'
             }
         }
-        stage('Test') {
+        stage('Push') {
             steps {
-                sh 'echo "test project"'
+                sh 'echo "pushing project"'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sh 'echo "deploying project"'
             }
         }
     }
